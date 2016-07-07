@@ -1,25 +1,23 @@
-var DataStructures = require('algorithms').DataStructures;
-var Stack = DataStructures.Stack;
-var Queue = DataStructures.Queue;
+const DataStructures = require('algorithms').DataStructures;
+const Stack = DataStructures.Stack;
+const Queue = DataStructures.Queue;
 
 
-function findFifth(foo){
-  var q = new Queue();
-  var output = -1;
-  var q_size = 5;
+function findFifth(foo) {
+  const q = new Queue();
+  const output = -1;
+  const Qsize = 5;
 
-  while(!foo.isEmpty())
-  {
-    if(q.length == q_size){
+  while (!foo.isEmpty()) {
+    if (q.length === Qsize) {
       q.pop();
     }
     q.push(foo.pop());
   }
 
-  //q has something
-  if(!q.isEmpty()){
+  if (!q.isEmpty()) {
     output = q.pop();
   }
 
   return output;
-};
+}
